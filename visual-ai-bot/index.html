@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA - Visual AI Interface</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>S
+  <div id="app" class="app-container">
+    <!-- Animated grid background -->
+    <div class="grid-background"></div>
+
+    <!-- Scanlines overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Glow orbs -->
+    <div class="glow-orb glow-orb-left"></div>
+    <div class="glow-orb glow-orb-right"></div>
+S
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-circle">
+          <span>⬡</span>
+        </div>
+        <div>
+          <div class="app-title">ARIA</div>
+          <div class="app-subtitle">VISUAL AI INTERFACE v2.6</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="status-dot" id="statusDot"></div>
+        <span class="status-text" id="statusText">CAM OFFLINE</span>
+      </div>
+    </header>
+
+    <!-- Main layout -->
+    <div class="main-layout">
+      <!-- Left: Camera panel -->
+      <div class="camera-panel">
+        <div class="camera-section">
+          <div class="video-container">
+            <!-- Corner decorations -->
+            <div class="corner top-left"></div>
+            <div class="corner top-right"></div>
+            <div class="corner bottom-left"></div>
+            <div class="corner bottom-right"></div>
+
+            <video id="video" autoplay muted playsinline></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+
+            <!-- No signal placeholder -->
+            <div id="noSignal" class="no-signal">
+              <div class="no-signal-icon">◈</div>
+              <div class="no-signal-text">NO SIGNAL</div>
+            </div>
+
+            <!-- Live indicator -->
+            <div id="liveIndicator" class="live-indicator" style="display: none;">
+              <div class="live-dot"></div>
+              LIVE
+            </div>
+          </div>
+
+          <!-- Error message -->
+          <div id="camError" class="cam-error" style="display: none;"></div>
+
+          <!-- Camera controls -->
+          <div class="cam-controls">
+            <button id="camButton" class="cam-button">◉ START CAM</button>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats">
+            <div class="stat-item">
+              <span class="stat-label">VISION</span>
+              <span class="stat-value" id="visionStatus">OFFLINE</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">SPEECH</span>
+              <span class="stat-value" id="speechStatus">STANDBY</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">AI MODEL</span>
+              <span class="stat-value" id="modelStatus">CLAUDE SONNET</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Chat panel -->
+      <div class="chat-panel">
+        <!-- Messages container -->
+        <div id="messagesContainer" class="messages-container"></div>
+
+        <!-- Input bar -->
+        <div class="input-bar">
+          <button id="micButton" class="mic-button" title="Toggle microphone">🎤</button>
+          <input
+            id="inputText"
+            type="text"
+            class="input-field"
+            placeholder="Start camera then type here..."
+          />
+          <button id="sendButton" class="send-button" disabled>➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
