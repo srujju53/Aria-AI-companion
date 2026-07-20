@@ -1,0 +1,1 @@
+this is an testing purpose AI companion and the AI model used in this project is Llama 3.3 which is old and inaccurate so the response will be inaccurate stay connect for in future we can use latest model and many future
